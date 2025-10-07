@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react'
 import Task from './Task'
-
+import todo from '../assets/todo.png'
 
 const Home = () => {
   const initialArray = localStorage.getItem('tasks')?JSON.parse(localStorage.getItem('tasks')):[]
@@ -30,7 +30,7 @@ const Home = () => {
     <div className='container'>
       <div className='head-container'>
       <h1>Daily Goals</h1>
-      <img src="./todo.png" className='todo-image'/>
+      <img src={todo} className='todo-image'/>
 
 
       </div>
