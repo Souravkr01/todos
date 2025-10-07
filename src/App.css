@@ -1,59 +1,85 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 
+/* GLOBAL STYLES */
 *{
     margin : 0%;
     padding: 0%;
     font-family: "Roboto", sans-serif;
-    /* background-color: black; */
-    /* color: aliceblue; */
+    box-sizing: border-box; 
 }
 
+/* NAVIGATION BAR */
 nav {
     background-color: rgb(30,108,242);
     color: white;
     padding: 20px;
     text-align: center;
 }
+
+/* MAIN CONTAINER STYLES - DESKTOP VIEW को ठीक कर रहा है */
 .container{
     background-color: cornsilk;
-    width: 70%;
+    /* ✅ Desktop/Normal View के लिए 70% चौड़ाई वापस */
+    width: 70%; 
+    /* ✅ Desktop के लिए full height वापस */
+    min-height: 100vh; 
     margin: auto;
-    min-height: 100vh;
+    /* ✅ Desktop के लिए padding वापस */
     padding: 4vmax;
     box-sizing: border-box;
+    /* ❌ कोई max-width यहाँ नहीं */
 }
+
+/* HEADER CONTAINER */
+.head-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center; 
+    margin-bottom: 20px; 
+}
+
+/* TODO ICON */
+.todo-image {
+    width: 30px;
+    height: 30px;
+}
+
+/* FORM ELEMENTS */
 .container > form {
     display: flex;
     flex-direction: column;
 }
-.container > h1  {
+.container > h1  {
     text-align: center;
-    margin-bottom: 30px;
     font-size: 2.5rem;
 }
-input,textarea, button {
+
+/* INPUT, TEXTAREA, BUTTON STYLES */
+input, textarea, button {
     padding: 15px;
     border: 1px solid black;
-    border-radius: 5px;;
+    border-radius: 5px;
     margin : 10px 0;
     font-size: 1.2rem;
+    width: 100%; 
+    box-sizing: border-box; 
 }
+
 button {
     border: none;
     background-color: black;
     color: white;
     cursor: pointer;
 }
+
+/* TASK DISPLAY STYLES */
 .task{
     display: flex;
-    /* width: 100%; */
     border-radius: 5px;
     padding: 20px;
     background-color: white;
     margin: 20px 0;
-    display: flex;
     align-items: center;
-
 }
 .task > div{
     width: 100%;
@@ -61,7 +87,6 @@ button {
 .task span {
     color: rgba(0, 0, 0, 0.633);
 }
-
 .task button {
     border-radius: 100%;
     width: 30px;
@@ -74,4 +99,32 @@ button {
 }
 .task button:hover{
     background-color: red;
+}
+
+/* HEADER IMAGE STYLES - केवल मोबाइल मोड पर दिखाने के लिए */
+.header-image-container {
+    display: none;
+}
+
+@media (max-width: 600px) {
+    .header-image-container {
+        display: block; 
+        width: 100%;
+        max-height: 250px; 
+        margin: 0; 
+        overflow: hidden;
+    }
+    
+    .header-image {
+        width: 100%;
+        height: 250px;
+        object-fit: cover;
+    }
+    
+    /* मोबाइल मोड पर कंटेनर को पूरी चौड़ाई दें */
+    .container {
+        width: 100%;
+        padding: 20px;
+        min-height: 100%;
+    }
 }

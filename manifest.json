@@ -1,0 +1,14 @@
+{
+  "manifest_version": 3,
+  "version": "1.1",
+  "name": "Todos Task",
+  "action": {
+    "default_popup": "index.html",
+    "default_icon": "todo.png",
+    
+    "default_area": {
+      "width": 400,
+      "height": 550
+    }
+  }
+}

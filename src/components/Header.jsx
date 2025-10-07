@@ -1,8 +1,13 @@
 import React from 'react'
-
+import header from '../assets/header.jpg'
 const Header = () => {
   return (
-    <nav>Get ready to complete your daily Goals</nav>
+    <>
+    <div className='header-image-container'> 
+        <img src={header} className='header-image' alt="Daily Goals"/>
+      </div>
+    <nav>DON'T DECREASE THE GOAL, INCREASE THE EFFORT, YOU CAN DO MORE THAN YOU THINK</nav>
+    </>
   )
 }
 

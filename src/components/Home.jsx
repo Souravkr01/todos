@@ -28,7 +28,12 @@ const Home = () => {
   }
   return (
     <div className='container'>
+      <div className='head-container'>
       <h1>Daily Goals</h1>
+      <img src="./todo.png" className='todo-image'/>
+
+
+      </div>
         <form onSubmit={submitHandler}>
             <input type="text" placeholder='Title' value={title} onChange={(e)=>setTitle(e.target.value)} />
             <textarea placeholder='description' value={description} onChange={(e)=>setDescription(e.target.value)}></textarea>
